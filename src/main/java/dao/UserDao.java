@@ -1,9 +1,7 @@
 package dao;
 
-import users.UserType;
+import models.UserType;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.util.List;
 
 public interface UserDao<T> {

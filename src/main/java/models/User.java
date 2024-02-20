@@ -1,4 +1,4 @@
-package users;
+package models;
 
 import java.io.*;
 
@@ -33,8 +33,8 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "+------------+----------------------+\n" +
-                String.format("| %-10s | %-20s |\n", ("ID: " + id), ("Name: " + name)) +
-                "+------------+----------------------+\n";
+        return "+------------+---------------------------+---------------------------+\n" +
+                String.format("| %-10s | %-25s | %-25s |\n", ("ID: " + id), ("Name: " + name), ("User type: ") + userType) +
+                "+------------+---------------------------+---------------------------+\n";
     }
 }

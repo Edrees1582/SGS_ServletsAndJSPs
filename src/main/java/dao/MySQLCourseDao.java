@@ -3,9 +3,6 @@ package dao;
 import util.DBUtil;
 import models.Course;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -84,20 +81,15 @@ public class MySQLCourseDao implements CourseDao {
     }
 
     @Override
-    public void update(String updateValue, String id, int updateOption) {
+    public void update(String id, String newId, String title, String instructorId) {
         try (Connection connection = dbUtil.getConnection()) {
-            String setQuery = switch (updateOption) {
-                case 1 -> "id = ?";
-                case 2 -> "title = ?";
-                case 3 -> "instructorId = ?";
-                default -> null;
-            };
-
-            String updateSql = "update courses set " + setQuery + " where id = ?;";
+            String updateSql = "update courses set id = ?, title = ?, instructorId = ? where id = ?;";
 
             PreparedStatement updatePreparedStatement = connection.prepareCall(updateSql);
-            updatePreparedStatement.setString(1, updateValue);
-            updatePreparedStatement.setString(2, id);
+            updatePreparedStatement.setString(1, newId);
+            updatePreparedStatement.setString(2, title);
+            updatePreparedStatement.setString(3, instructorId);
+            updatePreparedStatement.setString(4, id);
 
             updatePreparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -112,6 +104,10 @@ public class MySQLCourseDao implements CourseDao {
 
             PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);
             deletePreparedStatement.setString(1, id);
+
+            MySQLEnrollmentDao mySQLEnrollmentDao = new MySQLEnrollmentDao();
+
+            mySQLEnrollmentDao.deleteByCourse(id);
 
             deletePreparedStatement.executeUpdate();
         } catch (SQLException e) {

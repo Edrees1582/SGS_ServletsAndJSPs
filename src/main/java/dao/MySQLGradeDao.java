@@ -3,8 +3,6 @@ package dao;
 import models.Grade;
 import util.DBUtil;
 
-import java.io.DataInputStream;
-import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -106,6 +104,36 @@ public class MySQLGradeDao implements GradeDao {
             PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);
             deletePreparedStatement.setString(1, courseId);
             deletePreparedStatement.setString(2, studentId);
+
+            deletePreparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void deleteByStudent(String studentId) {
+        try (Connection connection = dbUtil.getConnection()) {
+            String deleteSql = "delete from grades where studentId = ?;";
+
+            PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);
+
+            deletePreparedStatement.setString(1, studentId);
+
+            deletePreparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void deleteByCourse(String courseId) {
+        try (Connection connection = dbUtil.getConnection()) {
+            String deleteSql = "delete from grades where courseId = ?;";
+
+            PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);
+
+            deletePreparedStatement.setString(1, courseId);
 
             deletePreparedStatement.executeUpdate();
         } catch (SQLException e) {

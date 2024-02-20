@@ -1,11 +1,8 @@
 package util;
 
 import models.Course;
-import models.Enrollment;
 import models.Grade;
-import models.Student;
-import users.User;
-import users.UserType;
+import models.User;
 
 import java.util.List;
 
@@ -25,13 +22,13 @@ public class FormatData {
         return String.valueOf(result);
     }
 
-    public String formatStudents(List<Student> fetchedStudents) {
+    public String formatStudents(List<User> fetchedStudents) {
         StringBuilder result = new StringBuilder();
         result.append("+------------+----------------------+\n");
         result.append(String.format("| %-10s | %-20s |\n", "Student ID", "Name"));
         result.append("+------------+----------------------+\n");
 
-        for (Student student : fetchedStudents) {
+        for (User student : fetchedStudents) {
             result.append(String.format("| %-10s | %-20s |\n", student.getId(), student.getName()));
         }
 

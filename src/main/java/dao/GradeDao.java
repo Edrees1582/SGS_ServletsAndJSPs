@@ -2,7 +2,6 @@ package dao;
 
 import models.Grade;
 
-import java.io.DataInputStream;
 import java.util.List;
 
 public interface GradeDao {
@@ -12,4 +11,6 @@ public interface GradeDao {
     void save(String courseId, String studentId, double grade);
     void update(String courseId, String studentId, double updatedGrade);
     void delete(String courseId, String studentId);
+    void deleteByStudent(String studentId);
+    void deleteByCourse(String courseId);
 }

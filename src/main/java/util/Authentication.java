@@ -1,6 +1,7 @@
 package util;
 
-import users.*;
+import models.User;
+import models.UserType;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

@@ -1,6 +1,7 @@
 package servlets;
 
 import dao.MySQLEnrollmentDao;
+import dao.MySQLGradeDao;
 import dao.MySQLUserDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,8 +9,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import models.Course;
-import users.User;
-import users.UserType;
+import models.Grade;
+import models.Statistics;
+import models.User;
+import models.UserType;
+import util.GradesStatistics;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -17,29 +21,77 @@ import java.util.List;
 
 @WebServlet(urlPatterns = "/student/*")
 public class StudentServlet extends HttpServlet {
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private MySQLEnrollmentDao mySQLEnrollmentDao;
+    private MySQLUserDao mySQLUserDao;
+    private MySQLGradeDao mySQLGradeDao;
+    private GradesStatistics gradesStatistics;
+
+    @Override
+    public void init() {
+        mySQLEnrollmentDao = new MySQLEnrollmentDao();
+        mySQLUserDao = new MySQLUserDao();
+        mySQLGradeDao = new MySQLGradeDao();
+        gradesStatistics = new GradesStatistics();
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
-        if (user != null && user.getUserType() == UserType.STUDENT && user.getId().equals(request.getPathInfo().substring(1))) {
-            MySQLEnrollmentDao mySQLEnrollmentDao = new MySQLEnrollmentDao();
-            MySQLUserDao mySQLUserDao = new MySQLUserDao();
+        String enteredId = "";
 
-            request.setAttribute("student", user);
+        if (request.getPathInfo() != null && !request.getPathInfo().equals("/"))
+            enteredId = request.getPathInfo().substring(1);
 
-            List<Course> courses = mySQLEnrollmentDao.getStudentCourses(user.getId());
+        if (user != null && (user.getUserType() == UserType.STUDENT || (!enteredId.isEmpty() && user.getUserType() == UserType.ADMIN))) {
+            User student;
+
+            if (user.getUserType() == UserType.ADMIN)
+                student = mySQLUserDao.get(enteredId, UserType.STUDENT);
+            else student = user;
+
+            if (student == null) {
+                response.sendRedirect("/errorHandler?errorCode=404&errorMessage=Student not found");
+                return;
+            }
+
+            request.setAttribute("student", student);
+
+            List<Course> courses = mySQLEnrollmentDao.getStudentCourses(student.getId());
             request.setAttribute("courses", courses);
 
             HashMap<String, User> instructors = new HashMap<>();
+            HashMap<String, Grade> grades = new HashMap<>();
 
             for (Course course : courses) {
                 instructors.put(course.getInstructorId(), mySQLUserDao.get(course.getInstructorId(), UserType.INSTRUCTOR));
+                grades.put(course.getId(), mySQLGradeDao.get(course.getId(), student.getId()));
             }
 
+            Statistics statistics = gradesStatistics.getStudentStatistics(student.getId());
+
             request.setAttribute("instructors", instructors);
+            request.setAttribute("grades", grades);
+            request.setAttribute("statistics", statistics);
 
             request.getRequestDispatcher("/WEB-INF/views/student.jsp").forward(request, response);
         }
-        else {
-            response.sendError(401, "Not authorized");
+        else if (user == null) response.sendRedirect("/login");
+        else if (user.getUserType() == UserType.ADMIN) response.sendRedirect("/errorHandler?errorCode=404&errorMessage=Empty student id");
+        else response.sendRedirect("/errorHandler?errorCode=403&errorMessage=Not authorized");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        User user = (User) request.getSession().getAttribute("user");
+
+        if (user.getUserType() == UserType.ADMIN) {
+            if (request.getParameter("studentAction").equals("get"))
+                response.sendRedirect("/student/" + request.getParameter("studentId"));
+            else if (request.getParameter("studentAction").equals("delete")) {
+                mySQLUserDao.delete(request.getParameter("studentId"), UserType.STUDENT);
+                response.sendRedirect("/admin");
+            }
         }
+        else response.sendRedirect("/errorHandler?errorCode=403&errorMessage=Not authorized");
     }
 }

@@ -9,94 +9,92 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb62b6f-cdc6-4531-8573-d875ad564ada" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/StudentSystemServlet_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/CourseDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/EnrollmentDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/GradeDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLCourseDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLEnrollmentDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLGradeDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/UserDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/http_stackpath.bootstrapcdn.com_bootstrap_4.5.2_css_bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/http_stackpath.bootstrapcdn.com_bootstrap_4.5.2_js_bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/Admin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/Course.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/Enrollment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/Grade.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/Instructor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/Student.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseStudentsServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/HelloServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/StudentCoursesServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/users/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/users/UserType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/Authentication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/DBUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/FormatData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/GradesStatistics.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/lib/mysql-connector-j-8.0.33.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/admin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/courses.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/instructor.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/student.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/students.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CourseDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/EnrollmentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/GradeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLCourseDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLEnrollmentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLGradeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLUserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Enrollment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Grade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Instructor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/CourseStudentsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/StudentCoursesServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/StudentServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/users/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/users/UserType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/Authentication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/DBUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/FormatData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/GradesStatistics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.0.33.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/partials/navbar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/courses.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/instructor.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/student.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/students.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+    <list default="true" id="cdb62b6f-cdc6-4531-8573-d875ad564ada" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/Statistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/UserType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/AdminServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseFormServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CreateCourseServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CreateUserServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/ErrorHandlingServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/GradeServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/InstructorServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/StudentEnrollmentServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/editCourse.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/editGrade.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/Statistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/AdminServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/CourseFormServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/CreateCourseServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/CreateUserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/ErrorHandlingServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/GradeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/InstructorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/StudentEnrollmentServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/course.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editCourse.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editGrade.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/CourseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/CourseDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/EnrollmentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/EnrollmentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/GradeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/GradeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLCourseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLCourseDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLEnrollmentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLEnrollmentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLGradeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLGradeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/Instructor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/models/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseStudentsServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/HelloServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/StudentCoursesServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/users/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/users/UserType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/Authentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/Authentication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/FormatData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/FormatData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/GradesStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/GradesStatistics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/courses.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/instructor.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/instructor.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/student.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/student.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/students.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CourseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/EnrollmentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/EnrollmentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/GradeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/GradeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MySQLCourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLCourseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MySQLEnrollmentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLEnrollmentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MySQLGradeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLGradeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MySQLUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Instructor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CourseStudentsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CourseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/StudentCoursesServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/StudentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/StudentServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/users/UserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/UserType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/FormatData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/FormatData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/GradesStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/GradesStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/partials/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/partials/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/courses.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/instructor.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/instructor.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/student.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/student.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/students.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/course.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,8 +104,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -123,6 +121,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -171,6 +172,9 @@
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="servlets" />
     </key>
   </component>
   <component name="RunManager">
@@ -280,11 +284,36 @@
       <updated>1708279489603</updated>
       <workItem from="1708279490710" duration="116000" />
       <workItem from="1708336481329" duration="4750000" />
-      <workItem from="1708346389347" duration="13616000" />
+      <workItem from="1708346389347" duration="13762000" />
+      <workItem from="1708425164794" duration="25410000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1708371240463</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708371240463</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>

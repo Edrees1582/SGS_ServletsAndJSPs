@@ -2,6 +2,7 @@ package util;
 
 import dao.MySQLGradeDao;
 import models.Grade;
+import models.Statistics;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -16,9 +17,8 @@ public class GradesStatistics {
         mySQLGradeDao = new MySQLGradeDao();
     }
 
-    public String getCourseStatistics(String courseId) {
+    public Statistics getCourseStatistics(String courseId) {
         List<Grade> grades = mySQLGradeDao.getCourseGrades(courseId);
-        String stats = "";
         double average = grades.stream().mapToDouble(Grade::getGrade).reduce(0.0, Double::sum) / grades.size();
 
         double median = 0.0;
@@ -31,18 +31,13 @@ public class GradesStatistics {
         double highest = Collections.max(grades, Comparator.comparing(Grade::getGrade)).getGrade();
         double lowest = Collections.min(grades, Comparator.comparing(Grade::getGrade)).getGrade();
 
-        stats += ("Course (" + courseId + ") grade statistics:\n");
-        stats += ("Average: " + average + "\n");
-        stats += ("Median: " + median + "\n");
-        stats += ("Highest: " + highest + "\n");
-        stats += ("Lowest: " + lowest + "\n");
-
-        return stats;
+        return new Statistics(average, median, highest, lowest);
     }
 
-    public String getStudentStatistics(String studentId) {
+    public Statistics getStudentStatistics(String studentId) {
         List<Grade> grades = mySQLGradeDao.getStudentGrades(studentId);
-        String stats = "";
+        if (grades.isEmpty()) return new Statistics(0.0, 0.0, 0.0, 0.0);
+
         double average = grades.stream().mapToDouble(Grade::getGrade).reduce(0.0, Double::sum) / grades.size();
 
         double median = 0.0;
@@ -55,12 +50,6 @@ public class GradesStatistics {
         double highest = Collections.max(grades, Comparator.comparing(Grade::getGrade)).getGrade();
         double lowest = Collections.min(grades, Comparator.comparing(Grade::getGrade)).getGrade();
 
-        stats += ("Student (" + studentId + ") grade statistics:\n");
-        stats += ("Average: " + average + "\n");
-        stats += ("Median: " + median + "\n");
-        stats += ("Highest: " + highest + "\n");
-        stats += ("Lowest: " + lowest + "\n");
-
-        return stats;
+        return new Statistics(average, median, highest, lowest);
     }
 }

@@ -1,11 +1,10 @@
 package dao;
 
-import users.*;
+import models.Course;
+import models.User;
+import models.UserType;
 import util.DBUtil;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,20 +23,17 @@ public class MySQLUserDao implements UserDao<User> {
     public User get(String id, UserType userType) {
         try (Connection connection = dbUtil.getConnection()) {
             Statement statement = connection.createStatement();
-            ResultSet resultSet;
+            ResultSet resultSet = null;
 
-            if (userType.equals(UserType.ADMIN)) {
+            if (userType.equals(UserType.ADMIN))
                 resultSet = statement.executeQuery("select * from admins where ID = '" + id + "';");
-                if (resultSet.next()) return new User(id, resultSet.getString("password"), resultSet.getString("name"), userType);
-            }
-            else if (userType.equals(UserType.INSTRUCTOR)) {
+            else if (userType.equals(UserType.INSTRUCTOR))
                 resultSet = statement.executeQuery("select * from instructors where ID = '" + id + "';");
-                if (resultSet.next()) return new User(id, resultSet.getString("password"), resultSet.getString("name"), userType);
-            }
-            else if (userType.equals(UserType.STUDENT)) {
+            else if (userType.equals(UserType.STUDENT))
                 resultSet = statement.executeQuery("select * from students where ID = '" + id + "';");
-                if (resultSet.next()) return new User(id, resultSet.getString("password"), resultSet.getString("name"), userType);
-            }
+
+            if (resultSet.next())
+                return new User(id, resultSet.getString("password"), resultSet.getString("name"), userType);
 
             return null;
         } catch (SQLException e) {
@@ -131,6 +127,12 @@ public class MySQLUserDao implements UserDao<User> {
             
             PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);
             deletePreparedStatement.setString(1, id);
+
+            if (userType == UserType.STUDENT) {
+                MySQLEnrollmentDao mySQLEnrollmentDao = new MySQLEnrollmentDao();
+                List<Course> courses = mySQLEnrollmentDao.getStudentCourses(id);
+                for (Course course : courses) mySQLEnrollmentDao.delete(course.getId(), id);
+            }
 
             deletePreparedStatement.executeUpdate();
         } catch (SQLException e) {
