@@ -86,16 +86,19 @@ public class CourseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
 
-        if (request.getParameter("courseAction").equals("get") && (user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.INSTRUCTOR))
-            response.sendRedirect("/course/" + request.getParameter("courseId"));
-        else if (request.getParameter("courseAction").equals("update") && user.getUserType() == UserType.ADMIN) {
-            mySQLCourseDao.update(request.getParameter("courseId"), request.getParameter("newCourseId"), request.getParameter("title"), request.getParameter("instructorId"));
-            response.sendRedirect("/course/" + request.getParameter("newCourseId"));
+        if (user != null) {
+            if (request.getParameter("courseAction").equals("get") && (user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.INSTRUCTOR))
+                response.sendRedirect("/course/" + request.getParameter("courseId"));
+            else if (request.getParameter("courseAction").equals("update") && user.getUserType() == UserType.ADMIN) {
+                mySQLCourseDao.update(request.getParameter("courseId"), request.getParameter("newCourseId"), request.getParameter("title"), request.getParameter("instructorId"));
+                response.sendRedirect("/course/" + request.getParameter("newCourseId"));
+            }
+            else if (request.getParameter("courseAction").equals("delete") && user.getUserType() == UserType.ADMIN) {
+                mySQLCourseDao.delete(request.getParameter("courseId"));
+                response.sendRedirect("/admin");
+            }
+            else response.sendRedirect("/errorHandler?errorCode=403&errorMessage=Not authorized");
         }
-        else if (request.getParameter("courseAction").equals("delete") && user.getUserType() == UserType.ADMIN) {
-            mySQLCourseDao.delete(request.getParameter("courseId"));
-            response.sendRedirect("/admin");
-        }
-        else response.sendRedirect("/errorHandler?errorCode=403&errorMessage=Not authorized");
+        else response.sendRedirect("/login");
     }
 }

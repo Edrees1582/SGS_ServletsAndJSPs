@@ -26,19 +26,21 @@ public class InstructorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
-        if (user != null) {
+
+        if (user != null && user.getUserType() == UserType.INSTRUCTOR) {
             request.setAttribute("courses", mySQLCourseDao.getAllByInstructorId(user.getId()));
             request.setAttribute("students", mySQLUserDao.getAll(UserType.STUDENT));
             request.getRequestDispatcher("/WEB-INF/views/instructor.jsp").forward(request, response);
         }
-        else response.sendRedirect("/login");
+        else if (user == null) response.sendRedirect("/login");
+        else response.sendRedirect("/errorHandler?errorCode=403&errorMessage=Not authorized");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         User user = (User) request.getSession().getAttribute("user");
 
-        if (user.getUserType() == UserType.ADMIN) {
+        if (user != null && user.getUserType() == UserType.ADMIN) {
             if (request.getParameter("instructorAction").equals("updateForm")) {
                 User instructor = mySQLUserDao.get(request.getParameter("instructorId"), UserType.INSTRUCTOR);
                 request.setAttribute("userType", "instructor");
@@ -55,6 +57,7 @@ public class InstructorServlet extends HttpServlet {
             }
             response.sendRedirect("/admin");
         }
+        else if (user == null) response.sendRedirect("/login");
         else response.sendRedirect("/errorHandler?errorCode=403&errorMessage=Not authorized");
     }
 }
