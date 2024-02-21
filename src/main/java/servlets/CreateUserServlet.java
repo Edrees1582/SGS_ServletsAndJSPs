@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import models.UserType;
 
-
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/createUser")
@@ -20,6 +19,11 @@ public class CreateUserServlet extends HttpServlet {
     }
 
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws  IOException {
+
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws  IOException {
         UserType chosenNewUserType = switch (request.getParameter("newUserType")) {
             case "admin" -> UserType.ADMIN;
@@ -29,6 +33,7 @@ public class CreateUserServlet extends HttpServlet {
         };
 
         mySQLUserDao.save(request.getParameter("newUserId"), request.getParameter("newPassword"), request.getParameter("newName"), chosenNewUserType);
+
         response.sendRedirect("/admin");
     }
 }

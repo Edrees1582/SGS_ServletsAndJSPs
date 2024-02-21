@@ -56,7 +56,6 @@ public class CourseServlet extends HttpServlet {
                 grades.put(student.getId(), mySQLGradeDao.get(course.getId(), student.getId()));
             }
 
-
             request.setAttribute("course", course);
             request.setAttribute("students",  students);
             request.setAttribute("grades", grades);
@@ -91,7 +90,7 @@ public class CourseServlet extends HttpServlet {
             response.sendRedirect("/course/" + request.getParameter("courseId"));
         else if (request.getParameter("courseAction").equals("update") && user.getUserType() == UserType.ADMIN) {
             mySQLCourseDao.update(request.getParameter("courseId"), request.getParameter("newCourseId"), request.getParameter("title"), request.getParameter("instructorId"));
-            response.sendRedirect("/admin");
+            response.sendRedirect("/course/" + request.getParameter("newCourseId"));
         }
         else if (request.getParameter("courseAction").equals("delete") && user.getUserType() == UserType.ADMIN) {
             mySQLCourseDao.delete(request.getParameter("courseId"));

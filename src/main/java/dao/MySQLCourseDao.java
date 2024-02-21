@@ -1,5 +1,6 @@
 package dao;
 
+import models.Grade;
 import util.DBUtil;
 import models.Course;
 
@@ -106,8 +107,10 @@ public class MySQLCourseDao implements CourseDao {
             deletePreparedStatement.setString(1, id);
 
             MySQLEnrollmentDao mySQLEnrollmentDao = new MySQLEnrollmentDao();
-
             mySQLEnrollmentDao.deleteByCourse(id);
+
+            MySQLGradeDao mySQLGradeDao = new MySQLGradeDao();
+            mySQLGradeDao.deleteByCourse(id);
 
             deletePreparedStatement.executeUpdate();
         } catch (SQLException e) {

@@ -81,17 +81,33 @@ public class StudentServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         User user = (User) request.getSession().getAttribute("user");
 
         if (user.getUserType() == UserType.ADMIN) {
             if (request.getParameter("studentAction").equals("get"))
                 response.sendRedirect("/student/" + request.getParameter("studentId"));
+            else if (request.getParameter("studentAction").equals("updateForm")) {
+                User student = mySQLUserDao.get(request.getParameter("studentId"), UserType.STUDENT);
+                request.setAttribute("userType", "student");
+                request.setAttribute("userId", student.getId());
+                request.setAttribute("password", student.getPassword());
+                request.setAttribute("name", student.getName());
+                request.getRequestDispatcher("/WEB-INF/views/editUser.jsp").forward(request, response);
+            }
+            else if (request.getParameter("studentAction").equals("update")) {
+                mySQLUserDao.update(request.getParameter("userId"), request.getParameter("password"), request.getParameter("name"), UserType.STUDENT);
+
+                System.out.println("TESTEST:" + request.getParameter("userId"));
+                System.out.println("TESTEST:" + request.getParameter("password"));
+                System.out.println("TESTEST:" + request.getParameter("name"));
+                response.sendRedirect("/admin");
+            }
             else if (request.getParameter("studentAction").equals("delete")) {
                 mySQLUserDao.delete(request.getParameter("studentId"), UserType.STUDENT);
                 response.sendRedirect("/admin");
             }
+            else response.sendRedirect("/errorHandler?errorCode=403&errorMessage=Not authorized");
         }
-        else response.sendRedirect("/errorHandler?errorCode=403&errorMessage=Not authorized");
     }
 }

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Edit grade</title>
@@ -11,7 +11,7 @@
     <form action="${pageContext.request.contextPath}/editGrade" method="POST">
         <label>
             Grade
-            <input type="text" name="grade" value="<%= request.getParameter("grade") %>" required min="0.0" max="100.0">
+            <input type="number" name="grade" value="<%= request.getParameter("grade") %>" required min="0.0" max="100.0" step="0.01">
             <input type="hidden" name="courseId" value="<%= request.getParameter("courseId") %>">
             <input type="hidden" name="studentId" value="<%= request.getParameter("studentId") %>">
         </label>

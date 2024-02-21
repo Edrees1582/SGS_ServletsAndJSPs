@@ -1,6 +1,5 @@
 package servlets;
 
-import dao.MySQLCourseDao;
 import dao.MySQLUserDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

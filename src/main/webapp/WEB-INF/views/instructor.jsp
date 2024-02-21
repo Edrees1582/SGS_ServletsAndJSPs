@@ -8,25 +8,34 @@
 </head>
 <body>
 <jsp:include page="../partials/navbar.jsp" />
-
 <div class="container">
-    <form action="${pageContext.request.contextPath}/course/" method="POST">
-        <label for="courseId">
-            <div class="form-group">
-                <label for="courseSelect">Select a course:</label>
-                <select class="form-control" id="courseSelect" name="courseId" required>
-                    <option selected disabled value="">Select a course</option>
-                    <%
-                        List<Course> courses = (List<Course>) request.getAttribute("courses");
-                        for (Course course : courses) {
-                    %>
-                    <option value="<%= course.getId() %>" name="courseId" id="courseId"><%= course.getId() %> - <%= course.getTitle() %></option>
-                    <% } %>
-                </select>
-            </div>
-        </label>
-        <button class="btn btn-success" name="courseAction" value="get">Get course</button>
-    </form>
+    <h2>Courses List</h2>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Course ID</th>
+            <th scope="col">Title</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <%
+            List<Course> courses = (List<Course>) request.getAttribute("courses");
+            for (Course course : courses) {
+        %>
+        <tr>
+            <td><%= course.getId() %></td>
+            <td><%= course.getTitle() %></td>
+            <td>
+                <form action="${pageContext.request.contextPath}/course/" method="POST">
+                    <input type="hidden" name="courseId" value="<%= course.getId() %>">
+                    <button class="btn btn-success" name="courseAction" value="get">Get course</button>
+                </form>
+            </td>
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
 </div>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

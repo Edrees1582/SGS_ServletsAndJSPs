@@ -91,24 +91,18 @@ public class MySQLUserDao implements UserDao<User> {
     }
 
     @Override
-    public void update(String updateValue, String id, UserType userType, int updateOption) {
+    public void update(String id, String password, String name, UserType userType) {
         try (Connection connection = dbUtil.getConnection()) {
-            String setQuery = switch (updateOption) {
-                case 1 -> "id = ?";
-                case 2 -> "password = ?";
-                case 3 -> "name = ?";
-                default -> null;
-            };
-
             String updateSql = switch (userType) {
-                case ADMIN -> "update admins set " + setQuery + " where id = ?;";
-                case INSTRUCTOR -> "update instructors set " + setQuery + " where id = ?;";
-                case STUDENT -> "update students set " + setQuery + " where id = ?;";
+                case ADMIN -> "update admins set password = ?, name = ? where id = ?;";
+                case INSTRUCTOR -> "update instructors set password = ?, name = ? where id = ?;";
+                case STUDENT -> "update students set password = ?, name = ? where id = ?;";
             };
 
             PreparedStatement updatePreparedStatement = connection.prepareCall(updateSql);
-            updatePreparedStatement.setString(1, updateValue);
-            updatePreparedStatement.setString(2, id);
+            updatePreparedStatement.setString(1, password);
+            updatePreparedStatement.setString(2, name);
+            updatePreparedStatement.setString(3, id);
 
             updatePreparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -132,6 +126,11 @@ public class MySQLUserDao implements UserDao<User> {
                 MySQLEnrollmentDao mySQLEnrollmentDao = new MySQLEnrollmentDao();
                 List<Course> courses = mySQLEnrollmentDao.getStudentCourses(id);
                 for (Course course : courses) mySQLEnrollmentDao.delete(course.getId(), id);
+            }
+            else if (userType == UserType.INSTRUCTOR) {
+                MySQLCourseDao mySQLCourseDao = new MySQLCourseDao();
+                List<Course> courses = mySQLCourseDao.getAllByInstructorId(id);
+                for (Course course : courses) mySQLCourseDao.delete(course.getId());
             }
 
             deletePreparedStatement.executeUpdate();

@@ -77,7 +77,7 @@
                     </select>
                 </div>
             </label>
-            <button class="btn btn-warning" name="instructorAction" value="update">Update instructor</button>
+            <button class="btn btn-warning" name="instructorAction" value="updateForm">Update instructor</button>
             <button class="btn btn-danger" name="instructorAction" value="delete">Delete instructor</button>
         </form>
     </div>
@@ -99,7 +99,7 @@
                 </div>
             </label>
             <button class="btn btn-success" name="studentAction" value="get">Get student</button>
-            <button class="btn btn-warning" name="studentAction" value="update">Update student</button>
+            <button class="btn btn-warning" name="studentAction" value="updateForm">Update student</button>
             <button class="btn btn-danger" name="studentAction" value="delete">Delete student</button>
         </form>
     </div>
