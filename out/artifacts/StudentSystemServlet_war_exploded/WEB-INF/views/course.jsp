@@ -1,9 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="models.Course" %>
-<%@ page import="models.User" %>
-<%@ page import="models.UserType" %>
-<%@ page import="models.Grade" %>
 <%@ page import="java.util.HashMap" %>
+<%@ page import="models.*" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -69,6 +66,31 @@
 </div>
 
 <% if (user.getUserType() == UserType.INSTRUCTOR) { %>
+<div class="container">
+    <h2>Grades statistics</h2>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Average</th>
+            <th scope="col">Median</th>
+            <th scope="col">Highest</th>
+            <th scope="col">Lowest</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%
+            Statistics statistics = (Statistics) request.getAttribute("statistics");
+        %>
+        <tr>
+            <td><%= String.format("%.2f", statistics.getAverage()) %></td>
+            <td><%= String.format("%.2f", statistics.getMedian()) %></td>
+            <td><%= String.format("%.2f", statistics.getHighest()) %></td>
+            <td><%= String.format("%.2f", statistics.getLowest()) %></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
 <div class="container">
     <form action="${pageContext.request.contextPath}/studentEnrollment" method="POST">
         <label for="studentId">

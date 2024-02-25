@@ -9,6 +9,6 @@ public interface CourseDao {
     List<Course> getAll();
     List<Course> getAllByInstructorId(String instructorId);
     void save(String courseId, String courseTitle, String instructorId);
-    void update(String id, String newId, String title, String instructorId);
+    void update(String id, String title, String instructorId);
     void delete(String id);
 }

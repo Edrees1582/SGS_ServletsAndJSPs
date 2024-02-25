@@ -5,15 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBUtil {
-    public DBUtil() {
+    public static Connection getConnection() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public Connection getConnection() throws SQLException {
         return DriverManager.getConnection("jdbc:mysql://localhost/sgs" , "root", "");
     }
 }

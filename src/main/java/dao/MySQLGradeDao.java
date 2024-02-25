@@ -8,18 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLGradeDao implements GradeDao {
-    private final DBUtil dbUtil;
-    public MySQLGradeDao() {
-        try {
-            dbUtil = new DBUtil();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     @Override
     public Grade get(String courseId, String studentId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from grades where courseId = '" + courseId + "' and studentId = '" + studentId + "';");
 
@@ -33,7 +24,7 @@ public class MySQLGradeDao implements GradeDao {
 
     @Override
     public List<Grade> getStudentGrades(String studentId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from grades where studentId = '" + studentId + "';");
             List<Grade> grades = new ArrayList<>();
@@ -49,7 +40,7 @@ public class MySQLGradeDao implements GradeDao {
 
     @Override
     public List<Grade> getCourseGrades(String courseId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from grades where courseId = '" + courseId + "';");
             List<Grade> grades = new ArrayList<>();
@@ -65,7 +56,7 @@ public class MySQLGradeDao implements GradeDao {
 
     @Override
     public void save(String courseId, String studentId, double grade) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String saveSql = "insert into grades values (?, ?, ?);";
 
             PreparedStatement preparedStatement = connection.prepareCall(saveSql);
@@ -82,7 +73,7 @@ public class MySQLGradeDao implements GradeDao {
 
     @Override
     public void update(String courseId, String studentId, double updatedGrade) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String updateSql = "update grades set grade = ? where courseId = ? and studentId = ?;";
 
             PreparedStatement updatePreparedStatement = connection.prepareCall(updateSql);
@@ -98,7 +89,7 @@ public class MySQLGradeDao implements GradeDao {
 
     @Override
     public void delete(String courseId, String studentId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String deleteSql = "delete from grades where courseId = ? and studentId = ?;";
 
             PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);
@@ -113,7 +104,7 @@ public class MySQLGradeDao implements GradeDao {
 
     @Override
     public void deleteByStudent(String studentId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String deleteSql = "delete from grades where studentId = ?;";
 
             PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);
@@ -128,7 +119,7 @@ public class MySQLGradeDao implements GradeDao {
 
     @Override
     public void deleteByCourse(String courseId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String deleteSql = "delete from grades where courseId = ?;";
 
             PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);

@@ -4,24 +4,16 @@ import models.Course;
 import models.User;
 import models.UserType;
 import util.DBUtil;
+import util.HashPassword;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLUserDao implements UserDao<User> {
-    private final DBUtil dbUtil;
-    public MySQLUserDao() {
-        try {
-            dbUtil = new DBUtil();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     @Override
     public User get(String id, UserType userType) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = null;
 
@@ -43,7 +35,7 @@ public class MySQLUserDao implements UserDao<User> {
 
     @Override
     public List<User> getAll(UserType userType) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet;
             List<User> users = new ArrayList<>();
@@ -72,9 +64,9 @@ public class MySQLUserDao implements UserDao<User> {
 
     @Override
     public void save(String id, String password, String name, UserType userType) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String saveSql = switch (userType) {
-                case ADMIN -> "insert into admins values (?, ?, ?);";
+                case ADMIN -> "insert into admins values (?, ?, ?,);";
                 case INSTRUCTOR -> "insert into instructors values (?, ?, ?);";
                 case STUDENT -> "insert into students values (?, ?, ?);";
             };
@@ -92,7 +84,7 @@ public class MySQLUserDao implements UserDao<User> {
 
     @Override
     public void update(String id, String password, String name, UserType userType) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String updateSql = switch (userType) {
                 case ADMIN -> "update admins set password = ?, name = ? where id = ?;";
                 case INSTRUCTOR -> "update instructors set password = ?, name = ? where id = ?;";
@@ -112,7 +104,7 @@ public class MySQLUserDao implements UserDao<User> {
 
     @Override
     public void delete(String id, UserType userType) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String deleteSql = switch (userType) {
                 case ADMIN -> "delete from admins where id = ?;";
                 case INSTRUCTOR -> "delete from instructors where id = ?;";

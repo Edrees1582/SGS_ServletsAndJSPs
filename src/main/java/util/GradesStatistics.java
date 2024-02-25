@@ -11,13 +11,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class GradesStatistics {
-    private final MySQLGradeDao mySQLGradeDao;
+    private static final MySQLGradeDao mySQLGradeDao = new MySQLGradeDao();
 
-    public GradesStatistics() {
-        mySQLGradeDao = new MySQLGradeDao();
-    }
-
-    public Statistics getCourseStatistics(String courseId) {
+    public static Statistics getCourseStatistics(String courseId) {
         List<Grade> grades = mySQLGradeDao.getCourseGrades(courseId);
         double average = grades.stream().mapToDouble(Grade::getGrade).reduce(0.0, Double::sum) / grades.size();
 
@@ -34,7 +30,7 @@ public class GradesStatistics {
         return new Statistics(average, median, highest, lowest);
     }
 
-    public Statistics getStudentStatistics(String studentId) {
+    public static Statistics getStudentStatistics(String studentId) {
         List<Grade> grades = mySQLGradeDao.getStudentGrades(studentId);
         if (grades.isEmpty()) return new Statistics(0.0, 0.0, 0.0, 0.0);
 

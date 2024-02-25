@@ -13,13 +13,6 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
-    private Authentication authentication;
-
-    @Override
-    public void init() {
-        authentication = new Authentication();
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
@@ -38,7 +31,7 @@ public class LoginServlet extends HttpServlet {
             default -> throw new IllegalStateException("Unexpected value: " + request.getParameter("userType"));
         };
 
-        User user = authentication.authenticateUser(chosenUserTypeInt, request.getParameter("userId"), request.getParameter("password"));
+        User user = Authentication.authenticateUser(chosenUserTypeInt, request.getParameter("userId"), request.getParameter("password"));
         if (user != null) {
             System.out.println(user);
             request.getSession().setAttribute("user", user);

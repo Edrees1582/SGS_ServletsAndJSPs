@@ -14,7 +14,7 @@
         <input type="hidden" name="userId" value="<%= request.getAttribute("userId") %>">
 
         <label for="password">Password:</label>
-        <input type="text" name="password" id="password" value="<%= request.getAttribute("password") %>">
+        <input type="text" name="password" id="password" value="">
 
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" value="<%= request.getAttribute("name") %>">

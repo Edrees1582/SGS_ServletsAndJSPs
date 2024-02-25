@@ -12,9 +12,13 @@
 <div class="container">
     <form action="${pageContext.request.contextPath}/course/" method="POST">
         <label>
+            <label for="courseId">Course id:</label>
+            <input type="text" name="courseId" id="courseId" value="<%= request.getParameter("courseId") %>" disabled>
             <input type="hidden" name="courseId" value="<%= request.getParameter("courseId") %>">
-            <input type="text" name="newCourseId" value="<%= request.getParameter("courseId") %>">
-            <input type="text" name="title" value="<%= request.getParameter("title") %>">
+
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" value="<%= request.getParameter("title") %>">
+
             <label for="instructorId">
                 <div class="form-group">
                     <label for="instructorId">Select an instructor:</label>

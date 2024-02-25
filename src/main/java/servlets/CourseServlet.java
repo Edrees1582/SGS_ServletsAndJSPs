@@ -9,10 +9,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import models.Course;
-import models.Grade;
-import models.User;
-import models.UserType;
+import models.*;
+import util.GradesStatistics;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -72,6 +70,10 @@ public class CourseServlet extends HttpServlet {
                 }
             }
 
+            Statistics statistics = GradesStatistics.getCourseStatistics(course.getId());
+
+            request.setAttribute("statistics", statistics);
+
             request.setAttribute("allOtherStudents",  allOtherStudents);
 
             request.setAttribute("instructor", mySQLUserDao.get(course.getInstructorId(), UserType.INSTRUCTOR));
@@ -90,8 +92,8 @@ public class CourseServlet extends HttpServlet {
             if (request.getParameter("courseAction").equals("get") && (user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.INSTRUCTOR))
                 response.sendRedirect("/course/" + request.getParameter("courseId"));
             else if (request.getParameter("courseAction").equals("update") && user.getUserType() == UserType.ADMIN) {
-                mySQLCourseDao.update(request.getParameter("courseId"), request.getParameter("newCourseId"), request.getParameter("title"), request.getParameter("instructorId"));
-                response.sendRedirect("/course/" + request.getParameter("newCourseId"));
+                mySQLCourseDao.update(request.getParameter("courseId"), request.getParameter("title"), request.getParameter("instructorId"));
+                response.sendRedirect("/course/" + request.getParameter("courseId"));
             }
             else if (request.getParameter("courseAction").equals("delete") && user.getUserType() == UserType.ADMIN) {
                 mySQLCourseDao.delete(request.getParameter("courseId"));

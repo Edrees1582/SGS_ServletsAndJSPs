@@ -11,18 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLEnrollmentDao implements EnrollmentDao {
-    private final DBUtil dbUtil;
-    public MySQLEnrollmentDao() {
-        try {
-            dbUtil = new DBUtil();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     @Override
     public List<Course> getStudentCourses(String studentId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select\n" +
                     "\tc.*" +
@@ -44,7 +35,7 @@ public class MySQLEnrollmentDao implements EnrollmentDao {
 
     @Override
     public List<User> getCourseStudents(String courseId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select\n" +
                     "\ts.*\n" +
@@ -66,7 +57,7 @@ public class MySQLEnrollmentDao implements EnrollmentDao {
 
     @Override
     public List<Enrollment> getAll() {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from enrollment;");
             List<Enrollment> enrollmentList = new ArrayList<>();
@@ -82,7 +73,7 @@ public class MySQLEnrollmentDao implements EnrollmentDao {
 
     @Override
     public void save(String courseId, String studentId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String saveSql = "insert into enrollment values (?, ?);";
 
             PreparedStatement preparedStatement = connection.prepareCall(saveSql);
@@ -101,7 +92,7 @@ public class MySQLEnrollmentDao implements EnrollmentDao {
 
     @Override
     public void delete(String courseId, String studentId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String deleteSql = "delete from enrollment where courseId = ? and studentId = ?;";
 
             PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);
@@ -120,7 +111,7 @@ public class MySQLEnrollmentDao implements EnrollmentDao {
 
     @Override
     public void deleteByStudent(String studentId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String deleteSql = "delete from enrollment where studentId = ?;";
 
             PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);
@@ -138,7 +129,7 @@ public class MySQLEnrollmentDao implements EnrollmentDao {
 
     @Override
     public void deleteByCourse(String courseId) {
-        try (Connection connection = dbUtil.getConnection()) {
+        try (Connection connection = DBUtil.getConnection()) {
             String deleteSql = "delete from enrollment where courseId = ?;";
 
             PreparedStatement deletePreparedStatement = connection.prepareCall(deleteSql);

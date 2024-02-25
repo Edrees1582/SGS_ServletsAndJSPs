@@ -24,14 +24,12 @@ public class StudentServlet extends HttpServlet {
     private MySQLEnrollmentDao mySQLEnrollmentDao;
     private MySQLUserDao mySQLUserDao;
     private MySQLGradeDao mySQLGradeDao;
-    private GradesStatistics gradesStatistics;
 
     @Override
     public void init() {
         mySQLEnrollmentDao = new MySQLEnrollmentDao();
         mySQLUserDao = new MySQLUserDao();
         mySQLGradeDao = new MySQLGradeDao();
-        gradesStatistics = new GradesStatistics();
     }
 
     @Override
@@ -67,7 +65,7 @@ public class StudentServlet extends HttpServlet {
                 grades.put(course.getId(), mySQLGradeDao.get(course.getId(), student.getId()));
             }
 
-            Statistics statistics = gradesStatistics.getStudentStatistics(student.getId());
+            Statistics statistics = GradesStatistics.getStudentStatistics(student.getId());
 
             request.setAttribute("instructors", instructors);
             request.setAttribute("grades", grades);
@@ -97,7 +95,7 @@ public class StudentServlet extends HttpServlet {
             }
             else if (request.getParameter("studentAction").equals("update")) {
                 mySQLUserDao.update(request.getParameter("userId"), request.getParameter("password"), request.getParameter("name"), UserType.STUDENT);
-                response.sendRedirect("/admin");
+                response.sendRedirect("/student/" + request.getParameter("userId"));
             }
             else if (request.getParameter("studentAction").equals("delete")) {
                 mySQLUserDao.delete(request.getParameter("studentId"), UserType.STUDENT);

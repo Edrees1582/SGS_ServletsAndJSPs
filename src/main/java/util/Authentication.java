@@ -9,14 +9,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Authentication {
-    private final DBUtil dbUtil;
 
-    public Authentication() {
-        dbUtil = new DBUtil();
-    }
-
-    public User authenticateUser(int chosenUserType, String id, String password) {
-        try (Connection connection = dbUtil.getConnection()) {
+    public static User authenticateUser(int chosenUserType, String id, String password) {
+        try (Connection connection = DBUtil.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet;
             User user = null;

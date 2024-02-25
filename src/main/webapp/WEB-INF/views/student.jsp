@@ -13,7 +13,7 @@
     <% User student = (User) request.getAttribute("student"); %>
     <h2>Student details:</h2>
     <p>ID: <%= student.getId() %></p>
-    <p>Title: <%= student.getName() %></p>
+    <p>Name: <%= student.getName() %></p>
     <h2>Courses List</h2>
     <table class="table">
         <thead class="thead-dark">
@@ -69,7 +69,18 @@
     </table>
 </div>
 
-<% if (((User) request.getSession().getAttribute("user")).getUserType() != UserType.STUDENT) {%>
+<% User user = (User) request.getSession().getAttribute("user"); %>
+
+<% if (user.getUserType() == UserType.ADMIN) { %>
+<div class="container">
+    <form action="${pageContext.request.contextPath}/student/" method="POST">
+        <input type="hidden" value="<%= student.getId() %>" name="studentId">
+        <button class="btn btn-warning" name="studentAction" value="updateForm">Update student</button>
+    </form>
+</div>
+<% } %>
+
+<% if (user.getUserType() != UserType.STUDENT) {%>
 <div class="container">
     <a class="btn btn-secondary" href="${pageContext.request.contextPath}/admin">Back</a>
 </div>
