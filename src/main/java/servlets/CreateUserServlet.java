@@ -25,7 +25,6 @@ public class CreateUserServlet extends HttpServlet {
 
         if (user != null && user.getUserType() == UserType.ADMIN) {
             UserType chosenNewUserType = switch (request.getParameter("newUserType")) {
-                case "admin" -> UserType.ADMIN;
                 case "instructor" -> UserType.INSTRUCTOR;
                 case "student" -> UserType.STUDENT;
                 default -> throw new IllegalStateException("Unexpected value: " + request.getParameter("newUserType"));
