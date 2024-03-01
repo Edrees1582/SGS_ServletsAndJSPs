@@ -59,7 +59,7 @@ public class CourseServlet extends HttpServlet {
             request.setAttribute("grades", grades);
 
             List<User> allStudents = mySQLEnrollmentDao.getCourseStudents(course.getId());
-            List<User> allOtherStudents = mySQLUserDao.getAll(UserType.STUDENT);
+            List<User> allOtherStudents = mySQLUserDao.getStudents();
 
             for (User student : allStudents) {
                 for (User otherStudent : allOtherStudents) {
@@ -76,7 +76,7 @@ public class CourseServlet extends HttpServlet {
 
             request.setAttribute("allOtherStudents",  allOtherStudents);
 
-            request.setAttribute("instructor", mySQLUserDao.get(course.getInstructorId(), UserType.INSTRUCTOR));
+            request.setAttribute("instructor", mySQLUserDao.get(course.getInstructorId()));
             request.getRequestDispatcher("/WEB-INF/views/course.jsp").forward(request, response);
         }
         else if (user == null) response.sendRedirect("/login");

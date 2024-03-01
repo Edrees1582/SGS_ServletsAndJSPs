@@ -9,11 +9,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb62b6f-cdc6-4531-8573-d875ad564ada" name="Changes" comment="Changed some class methods to static">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="cdb62b6f-cdc6-4531-8573-d875ad564ada" name="Changes" comment="Some edits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CreateUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CreateUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLEnrollmentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLEnrollmentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/AdminServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseFormServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseFormServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CreateUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CreateUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/InstructorServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/InstructorServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/Authentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/Authentication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/DBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/DBUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/editUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/editUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MySQLEnrollmentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLEnrollmentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MySQLUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CourseFormServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CourseFormServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CourseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CourseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/InstructorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/InstructorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/StudentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/StudentServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/DBUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +140,7 @@
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="9141558a-7ed9-458d-a79b-e65ab9ccc191" />
         <option name="HTTP_PORT" value="8854" />
+        <option name="JNDI_PORT" value="1599" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -212,7 +238,8 @@
       <workItem from="1709037439036" duration="7914000" />
       <workItem from="1709112955865" duration="367000" />
       <workItem from="1709202833211" duration="599000" />
-      <workItem from="1709280234039" duration="664000" />
+      <workItem from="1709280234039" duration="1794000" />
+      <workItem from="1709291125396" duration="1108000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -254,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708887655968</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Some edits">
+      <option name="closed" value="true" />
+      <created>1709281701502</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709281701502</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +313,8 @@
     <MESSAGE value="Implemented update users, and fixed some bugs" />
     <MESSAGE value="Added unauthorized actions handling" />
     <MESSAGE value="Changed some class methods to static" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed some class methods to static" />
+    <MESSAGE value="Some edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some edits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

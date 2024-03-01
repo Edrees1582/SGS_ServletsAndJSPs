@@ -10,23 +10,20 @@ import java.sql.Statement;
 
 public class Authentication {
 
-    public static User authenticateUser(int chosenUserType, String id, String password) {
+    public static User authenticateUser(String id, String password) {
         try (Connection connection = DBUtil.getConnection()) {
             Statement statement = connection.createStatement();
-            ResultSet resultSet;
+            ResultSet resultSet = statement.executeQuery("select * from users where ID = '" + id + "' AND password = '" + password + "';");
             User user = null;
 
-            if (chosenUserType == 1) {
-                resultSet = statement.executeQuery("select * from admins where ID = '" + id + "' AND password = '" + password + "';");
-                if (resultSet.next()) user = new User(id, password, resultSet.getString("name"), UserType.ADMIN);
-            }
-            else if (chosenUserType == 2) {
-                resultSet = statement.executeQuery("select * from instructors where ID = '" + id + "' AND password = '" + password + "';");
-                if (resultSet.next()) user = new User(id, password, resultSet.getString("name"), UserType.INSTRUCTOR);
-            }
-            else if (chosenUserType == 3) {
-                resultSet = statement.executeQuery("select * from students where ID = '" + id + "' AND password = '" + password + "';");
-                if (resultSet.next()) user = new User(id, password, resultSet.getString("name"), UserType.STUDENT);
+            if (resultSet.next()) {
+                UserType userType = switch (resultSet.getString("userType")) {
+                    case "admin" -> UserType.ADMIN;
+                    case "instructor" -> UserType.INSTRUCTOR;
+                    case "student" -> UserType.STUDENT;
+                    default -> throw new IllegalStateException("Unexpected value: " + resultSet.getString("userType"));
+                };
+                user = new User(id, password, resultSet.getString("name"), userType);
             }
 
             return user;

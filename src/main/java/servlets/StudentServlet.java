@@ -44,7 +44,7 @@ public class StudentServlet extends HttpServlet {
             User student;
 
             if (user.getUserType() == UserType.ADMIN)
-                student = mySQLUserDao.get(enteredId, UserType.STUDENT);
+                student = mySQLUserDao.get(enteredId);
             else student = user;
 
             if (student == null) {
@@ -61,7 +61,7 @@ public class StudentServlet extends HttpServlet {
             HashMap<String, Grade> grades = new HashMap<>();
 
             for (Course course : courses) {
-                instructors.put(course.getInstructorId(), mySQLUserDao.get(course.getInstructorId(), UserType.INSTRUCTOR));
+                instructors.put(course.getInstructorId(), mySQLUserDao.get(course.getInstructorId()));
                 grades.put(course.getId(), mySQLGradeDao.get(course.getId(), student.getId()));
             }
 
@@ -86,7 +86,7 @@ public class StudentServlet extends HttpServlet {
             if (request.getParameter("studentAction").equals("get"))
                 response.sendRedirect("/student/" + request.getParameter("studentId"));
             else if (request.getParameter("studentAction").equals("updateForm")) {
-                User student = mySQLUserDao.get(request.getParameter("studentId"), UserType.STUDENT);
+                User student = mySQLUserDao.get(request.getParameter("studentId"));
                 request.setAttribute("userType", "student");
                 request.setAttribute("userId", student.getId());
                 request.setAttribute("password", student.getPassword());
@@ -94,11 +94,11 @@ public class StudentServlet extends HttpServlet {
                 request.getRequestDispatcher("/WEB-INF/views/editUser.jsp").forward(request, response);
             }
             else if (request.getParameter("studentAction").equals("update")) {
-                mySQLUserDao.update(request.getParameter("userId"), request.getParameter("password"), request.getParameter("name"), UserType.STUDENT);
+                mySQLUserDao.update(request.getParameter("userId"), request.getParameter("password"), request.getParameter("name"));
                 response.sendRedirect("/student/" + request.getParameter("userId"));
             }
             else if (request.getParameter("studentAction").equals("delete")) {
-                mySQLUserDao.delete(request.getParameter("studentId"), UserType.STUDENT);
+                mySQLUserDao.delete(request.getParameter("studentId"));
                 response.sendRedirect("/admin");
             }
         }

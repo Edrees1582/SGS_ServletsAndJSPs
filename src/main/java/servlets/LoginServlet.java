@@ -24,18 +24,11 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws  IOException {
-        int chosenUserTypeInt = switch (request.getParameter("userType")) {
-            case "admin" -> 1;
-            case "instructor" -> 2;
-            case "student" -> 3;
-            default -> throw new IllegalStateException("Unexpected value: " + request.getParameter("userType"));
-        };
-
-        User user = Authentication.authenticateUser(chosenUserTypeInt, request.getParameter("userId"), request.getParameter("password"));
+        User user = Authentication.authenticateUser(request.getParameter("userId"), request.getParameter("password"));
         if (user != null) {
             System.out.println(user);
             request.getSession().setAttribute("user", user);
-            response.sendRedirect("/" + request.getParameter("userType"));
+            response.sendRedirect("/" + user.getUserType().toString().toLowerCase());
         }
         else response.sendRedirect("/login");
     }

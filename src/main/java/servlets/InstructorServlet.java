@@ -29,7 +29,7 @@ public class InstructorServlet extends HttpServlet {
 
         if (user != null && user.getUserType() == UserType.INSTRUCTOR) {
             request.setAttribute("courses", mySQLCourseDao.getAllByInstructorId(user.getId()));
-            request.setAttribute("students", mySQLUserDao.getAll(UserType.STUDENT));
+            request.setAttribute("students", mySQLUserDao.getStudents());
             request.getRequestDispatcher("/WEB-INF/views/instructor.jsp").forward(request, response);
         }
         else if (user == null) response.sendRedirect("/login");
@@ -42,7 +42,7 @@ public class InstructorServlet extends HttpServlet {
 
         if (user != null && user.getUserType() == UserType.ADMIN) {
             if (request.getParameter("instructorAction").equals("updateForm")) {
-                User instructor = mySQLUserDao.get(request.getParameter("instructorId"), UserType.INSTRUCTOR);
+                User instructor = mySQLUserDao.get(request.getParameter("instructorId"));
                 request.setAttribute("userType", "instructor");
                 request.setAttribute("userId", instructor.getId());
                 request.setAttribute("password", instructor.getPassword());
@@ -50,10 +50,10 @@ public class InstructorServlet extends HttpServlet {
                 request.getRequestDispatcher("/WEB-INF/views/editUser.jsp").forward(request, response);
             }
             else if (request.getParameter("instructorAction").equals("update")) {
-                mySQLUserDao.update(request.getParameter("userId"), request.getParameter("password"), request.getParameter("name"), UserType.INSTRUCTOR);
+                mySQLUserDao.update(request.getParameter("userId"), request.getParameter("password"), request.getParameter("name"));
             }
             else if (request.getParameter("instructorAction").equals("delete")) {
-                mySQLUserDao.delete(request.getParameter("instructorId"), UserType.INSTRUCTOR);
+                mySQLUserDao.delete(request.getParameter("instructorId"));
             }
             response.sendRedirect("/admin");
         }

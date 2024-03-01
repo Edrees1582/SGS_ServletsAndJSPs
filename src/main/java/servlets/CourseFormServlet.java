@@ -25,7 +25,7 @@ public class CourseFormServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
 
         if (user != null && user.getUserType() == UserType.ADMIN) {
-            request.setAttribute("instructors", mySQLUserDao.getAll(UserType.INSTRUCTOR));
+            request.setAttribute("instructors", mySQLUserDao.getInstructors());
             request.getRequestDispatcher("/WEB-INF/views/editCourse.jsp").forward(request, response);
         }
         else if (user == null) response.sendRedirect("/login");

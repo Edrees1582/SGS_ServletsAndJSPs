@@ -16,7 +16,6 @@
         <form action="${pageContext.request.contextPath}/createUser" method="POST">
             <label for="newUserType">User type:</label>
             <select class="form-select" id="newUserType" name="newUserType" required>
-                <option value="admin">Admin</option>
                 <option value="instructor">Instructor</option>
                 <option value="student">Student</option>
             </select>

@@ -13,13 +13,6 @@
 
 <div class="container">
   <form action="${pageContext.request.contextPath}/login" method="POST">
-    <label for="userType">Login as:</label>
-    <select class="form-select" id="userType" name="userType" required>
-      <option value="admin">Admin</option>
-      <option value="instructor">Instructor</option>
-      <option value="student">Student</option>
-    </select>
-
     <label for="userId">User id:</label>
     <input type="text" placeholder="user id" name="userId" id="userId" required>
 

@@ -28,8 +28,8 @@ public class AdminServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
 
         if (user != null && user.getUserType() == UserType.ADMIN) {
-            request.setAttribute("students", mySQLUserDao.getAll(UserType.STUDENT));
-            request.setAttribute("instructors", mySQLUserDao.getAll(UserType.INSTRUCTOR));
+            request.setAttribute("students", mySQLUserDao.getStudents());
+            request.setAttribute("instructors", mySQLUserDao.getInstructors());
             request.setAttribute("courses", mySQLCourseDao.getAll());
             request.getRequestDispatcher("/WEB-INF/views/admin.jsp").forward(request, response);
         }

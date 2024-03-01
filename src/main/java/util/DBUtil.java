@@ -11,6 +11,6 @@ public class DBUtil {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return DriverManager.getConnection("jdbc:mysql://localhost/sgs" , "root", "");
+        return DriverManager.getConnection("jdbc:mysql://localhost/sgs" , "root", "Atypon#123");
     }
 }
