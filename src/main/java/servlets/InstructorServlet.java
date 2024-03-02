@@ -50,7 +50,9 @@ public class InstructorServlet extends HttpServlet {
                 request.getRequestDispatcher("/WEB-INF/views/editUser.jsp").forward(request, response);
             }
             else if (request.getParameter("instructorAction").equals("update")) {
-                mySQLUserDao.update(request.getParameter("userId"), request.getParameter("password"), request.getParameter("name"));
+                mySQLUserDao.update(request.getParameter("userId"),
+                        request.getParameter("password"),
+                        request.getParameter("name"));
             }
             else if (request.getParameter("instructorAction").equals("delete")) {
                 mySQLUserDao.delete(request.getParameter("instructorId"));

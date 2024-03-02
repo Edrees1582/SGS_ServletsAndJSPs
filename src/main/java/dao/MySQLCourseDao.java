@@ -1,6 +1,5 @@
 package dao;
 
-import models.Grade;
 import util.DBUtil;
 import models.Course;
 

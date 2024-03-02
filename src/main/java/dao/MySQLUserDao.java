@@ -4,7 +4,6 @@ import models.Course;
 import models.User;
 import models.UserType;
 import util.DBUtil;
-import util.HashPassword;
 
 import java.sql.*;
 import java.util.ArrayList;

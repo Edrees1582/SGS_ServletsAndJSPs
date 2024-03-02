@@ -11,34 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb62b6f-cdc6-4531-8573-d875ad564ada" name="Changes" comment="Some edits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLEnrollmentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLEnrollmentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/MySQLUserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/AdminServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseFormServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseFormServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CourseServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CreateUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/CreateUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/InstructorServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/InstructorServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/servlets/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/Authentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/Authentication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/DBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/classes/util/DBUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/editUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/editUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentSystemServlet_war_exploded/WEB-INF/views/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MySQLEnrollmentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLEnrollmentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MySQLCourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLCourseDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/MySQLUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MySQLUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/AdminServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CourseFormServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CourseFormServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CourseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CourseServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/InstructorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/InstructorServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/StudentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/StudentServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Authentication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/DBUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/GradesStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/GradesStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/HashPassword.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,29 +65,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.18.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Edrees/IdeaProjects/StudentSystemSpring&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.37169158&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;profiler.jvm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.18.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Edrees/IdeaProjects/StudentSystemSpring",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.37169158",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "profiler.jvm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Edrees\IdeaProjects\StudentSystemServlet\src\main\webapp\WEB-INF\lib" />
@@ -139,8 +117,6 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="9141558a-7ed9-458d-a79b-e65ab9ccc191" />
-        <option name="HTTP_PORT" value="8854" />
-        <option name="JNDI_PORT" value="1599" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -240,6 +216,10 @@
       <workItem from="1709202833211" duration="599000" />
       <workItem from="1709280234039" duration="1794000" />
       <workItem from="1709291125396" duration="1108000" />
+      <workItem from="1709303659852" duration="60000" />
+      <workItem from="1709309503991" duration="5633000" />
+      <workItem from="1709333559257" duration="335000" />
+      <workItem from="1709384101914" duration="4324000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
